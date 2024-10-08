@@ -6,7 +6,6 @@
     <meta name="description" content="Ingram Design Studios - Professional web design services for various industries.">
     <title>Ingram Design Studios</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <style>
         /* Global Styles */
@@ -41,17 +40,15 @@
             transition: color 0.3s;
         }
         nav ul li a:hover {
-            color: #61dafb; /* Highlight color on hover */
+            color: #61dafb;
         }
 
-        /* Flexbox Container for Logo */
+        /* Logo and Flexbox */
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 15px; /* Adds space between logo and text */
+            gap: 15px;
         }
-
-        /* Logo */
         .logo-svg {
             width: 60px;
             height: 60px;
@@ -66,11 +63,8 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background-image: url('hero-image.jpg'); /* Add your hero image */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
+            background-color: #0a0a23;
+            color: #ffffff;
         }
         .hero h1 {
             font-size: 3.5rem;
@@ -114,47 +108,216 @@
             stroke-linecap: round;
         }
 
-        /* SVG Animation */
-        @keyframes pulse {
-            0% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(10px); }
-            100% { transform: translateX(-50%) translateY(0); }
-        }
-
-        /* Intro Section */
-        .intro {
+        /* Services Section */
+        .services-highlight {
             padding: 60px 40px;
+            background-color: #f8f8f8;
+            color: #0a0a23;
             text-align: center;
-            background-color: #111133;
         }
-        .intro h2 {
+        .services-highlight h2 {
             font-size: 2.5rem;
-            margin-bottom: 20px;
+            color: #000000; /* Ensure contrast for light background */
         }
-        .intro p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto;
+        .service-cards {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
         }
-
-        /* Footer */
-        footer {
-            text-align: center;
+        .service-cards .card {
+            background-color: #fff;
             padding: 20px;
-            background-color: #0a0a23;
-            color: #999;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .service-cards .card:hover {
+            transform: translateY(-10px);
+        }
+        .service-cards img {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+        .service-cards h3 {
+            font-size: 1.5rem;
+            color: #0a0a23;
         }
 
-        @media (max-width: 768px) {
-            /* Responsive Hero for smaller screens */
-            .hero {
-                height: 70vh;
-            }
-            .hero h1 {
-                font-size: 2.5rem;
-            }
+        /* Portfolio Section */
+        .portfolio-preview {
+            padding: 60px 40px;
+            background-color: #eeeeee;
+            color: #0a0a23;
+            text-align: center;
         }
+        .portfolio-preview h2 {
+            font-size: 2.5rem;
+            color: #000000; /* Contrast for light background */
+        }
+        .portfolio-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .portfolio-item {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background-color: #ccc;
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .portfolio-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            border-radius: 8px;
+        }
+        .portfolio-item:hover .overlay {
+            opacity: 1;
+        }
+        .portfolio-item h3 {
+            color: white;
+        }
+        .portfolio-item a {
+            color: #61dafb;
+            text-decoration: underline;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 60px 40px;
+            background-color: #111133;
+            color: #ffffff;
+            text-align: center;
+        }
+        .testimonials h2 {
+            font-size: 2.5rem;
+            color: #ffffff;
+        }
+        .testimonial-slider {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .testimonial {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+        }
+        .testimonial p {
+            font-style: italic;
+            font-size: 1rem;
+        }
+        .testimonial span {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Call to Action Section */
+        .cta-banner {
+            padding: 60px 40px;
+            background-color: #61dafb;
+            color: #0a0a23;
+            text-align: center;
+        }
+        .cta-banner h2 {
+            font-size: 2.5rem;
+            color: #0a0a23;
+        }
+        .cta-banner .btn {
+            background-color: #0a0a23;
+            color: #61dafb;
+            padding: 15px 30px;
+        }
+
+        /* Clients Section */
+        .clients {
+            padding: 60px 40px;
+            background-color: #e6e6e6;
+            color: #0a0a23;
+            text-align: center;
+        }
+        .clients h2 {
+            font-size: 2.5rem;
+            color: #000000;
+        }
+        .client-logos {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .client-logos img {
+            width: 100px;
+            filter: grayscale(100%);
+            transition: filter 0.3s;
+        }
+        .client-logos img:hover {
+            filter: grayscale(0);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 60px 40px;
+            background-color: #0a0a23;
+            color: white;
+            text-align: center;
+        }
+        .contact h2 {
+            font-size: 2.5rem;
+            color: #ffffff;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .contact input,
+        .contact textarea {
+            width: 300px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #fff;
+            color: #0a0a23;
+        }
+        .contact textarea {
+            height: 120px;
+            resize: none;
+        }
+        .contact button {
+            padding: 15px 30px;
+            background-color: #61dafb;
+            color: #0a0a23;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 <body>
@@ -163,7 +326,6 @@
     <header>
         <div class="logo-container">
             <svg class="logo-svg" viewBox="0 0 100 100">
-                <!-- Logo content -->
                 <circle cx="50" cy="50" r="48" fill="#0a0a23" stroke="#ffffff" stroke-width="4"/>
                 <rect x="30" y="25" width="8" height="50" fill="#ffffff" />
                 <path d="M50 25 H60 A12 25 0 1 1 60 75 H50 Z" fill="#ffffff" />
@@ -174,8 +336,8 @@
             <ul>
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#intro">About Us</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#services-highlight">Services</a></li>
+                <li><a href="#portfolio-preview">Portfolio</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
@@ -186,19 +348,98 @@
     <section id="hero" class="hero">
         <h1>Ingram Design Studios</h1>
         <p>Crafting modern, professional websites for businesses.</p>
-        <a href="#services" class="btn">Explore Our Services</a>
+        <a href="#services-highlight" class="btn">Explore Our Services</a>
         <!-- Scroll Down Indicator -->
-        <div class="scroll-down" onclick="document.getElementById('intro').scrollIntoView({ behavior: 'smooth' })">
+        <div class="scroll-down" onclick="document.getElementById('services-highlight').scrollIntoView({ behavior: 'smooth' })">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path d="M12 19V5m0 14-5-5m5 5 5-5"/>
             </svg>
         </div>
     </section>
 
-    <!-- Intro Section -->
-    <section id="intro" class="intro">
-        <h2>About Ingram Design Studios</h2>
-        <p>At Ingram Design Studios, we specialize in delivering high-quality, custom websites tailored to your business needs. Whether you're a tradesman, small business, or an entrepreneur, our goal is to provide modern and effective websites that enhance your online presence. Based in Ashford, Kent, we focus on creating user-friendly designs that help you stand out in the digital world.</p>
+    <!-- Services Section -->
+    <section id="services-highlight" class="services-highlight">
+        <h2>Our Specialities</h2>
+        <div class="service-cards">
+            <div class="card">
+                <img src="design-icon.png" alt="Web Design">
+                <h3>Web Design</h3>
+                <p>We create custom, mobile-friendly websites tailored to your business needs.</p>
+            </div>
+            <div class="card">
+                <img src="seo-icon.png" alt="SEO Services">
+                <h3>SEO Optimisation</h3>
+                <p>Helping you rank higher on search engines with professional SEO strategies.</p>
+            </div>
+            <div class="card">
+                <img src="maintenance-icon.png" alt="Maintenance">
+                <h3>Website Maintenance</h3>
+                <p>Keep your website running smoothly with our ongoing maintenance services.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio-preview" class="portfolio-preview">
+        <h2>Recent Projects</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="project1-thumbnail.jpg" alt="Project 1">
+                <div class="overlay">
+                    <h3>Plumbing Website</h3>
+                    <a href="#">View Project</a>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="project2-thumbnail.jpg" alt="Project 2">
+                <div class="overlay">
+                    <h3>Carpentry Solutions</h3>
+                    <a href="#">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial">
+                <p>"Ingram Design Studios transformed our online presence. We highly recommend their services!"</p>
+                <span>- John Smith, Ashford Plumbing</span>
+            </div>
+            <div class="testimonial">
+                <p>"Thanks to their web design, our business has seen a 30% increase in traffic!"</p>
+                <span>- Sarah Cooper, Carpentry Solutions</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-banner">
+        <h2>Ready to Start Your Project?</h2>
+        <a href="#contact" class="btn cta-btn">Get in Touch</a>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients">
+        <h2>Trusted By</h2>
+        <div class="client-logos">
+            <img src="client1-logo.png" alt="Client 1">
+            <img src="client2-logo.png" alt="Client 2">
+            <img src="client3-logo.png" alt="Client 3">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form action="submit_form.php" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
     </section>
 
     <!-- Footer -->
