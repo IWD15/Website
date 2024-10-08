@@ -43,9 +43,24 @@
         nav ul li a:hover {
             color: #61dafb; /* Highlight color on hover */
         }
+
+        /* Flexbox Container for Logo */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Adds space between logo and text */
+        }
+
+        /* Logo */
+        .logo-svg {
+            width: 60px;
+            height: 60px;
+        }
+
         /* Hero Section */
         .hero {
-            height: 100vh;
+            height: 80vh;
+            padding: 30px 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -55,15 +70,16 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            position: relative;
         }
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             margin: 0;
             text-transform: uppercase;
             font-weight: 600;
         }
         .hero p {
-            margin: 20px 0;
+            margin: 15px 0;
             font-size: 1.2rem;
         }
         .btn {
@@ -79,6 +95,32 @@
         .btn:hover {
             background-color: #ffffff;
         }
+
+        /* Scroll Down Indicator */
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+        .scroll-down svg {
+            width: 30px;
+            height: 50px;
+            stroke: #ffffff;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+        }
+
+        /* SVG Animation */
+        @keyframes pulse {
+            0% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+            100% { transform: translateX(-50%) translateY(0); }
+        }
+
         /* Intro Section */
         .intro {
             padding: 60px 40px;
@@ -95,24 +137,23 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        /* About, Services, Portfolio, Testimonials */
-        .about, .services, .portfolio, .testimonials, .contact {
-            padding: 60px 40px;
-            text-align: center;
-        }
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 1.1rem;
-        }
+
         /* Footer */
         footer {
             text-align: center;
             padding: 20px;
             background-color: #0a0a23;
             color: #999;
+        }
+
+        @media (max-width: 768px) {
+            /* Responsive Hero for smaller screens */
+            .hero {
+                height: 70vh;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
@@ -121,7 +162,7 @@
     <!-- Header & Navigation -->
     <header>
         <div class="logo-container">
-            <svg class="logo-svg" viewBox="0 0 100 100" width="60" height="60">
+            <svg class="logo-svg" viewBox="0 0 100 100">
                 <!-- Logo content -->
                 <circle cx="50" cy="50" r="48" fill="#0a0a23" stroke="#ffffff" stroke-width="4"/>
                 <rect x="30" y="25" width="8" height="50" fill="#ffffff" />
@@ -146,42 +187,18 @@
         <h1>Ingram Design Studios</h1>
         <p>Crafting modern, professional websites for businesses.</p>
         <a href="#services" class="btn">Explore Our Services</a>
+        <!-- Scroll Down Indicator -->
+        <div class="scroll-down" onclick="document.getElementById('intro').scrollIntoView({ behavior: 'smooth' })">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 19V5m0 14-5-5m5 5 5-5"/>
+            </svg>
+        </div>
     </section>
 
     <!-- Intro Section -->
     <section id="intro" class="intro">
         <h2>About Ingram Design Studios</h2>
         <p>At Ingram Design Studios, we specialize in delivering high-quality, custom websites tailored to your business needs. Whether you're a tradesman, small business, or an entrepreneur, our goal is to provide modern and effective websites that enhance your online presence. Based in Ashford, Kent, we focus on creating user-friendly designs that help you stand out in the digital world.</p>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about" class="about">
-        <h2>Our Mission</h2>
-        <p>Our mission is to create impactful, visually appealing websites that help our clients succeed in their industries.</p>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <h2>Our Services</h2>
-        <p>We offer custom web design, SEO optimization, website maintenance, and more.</p>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <h2>Our Portfolio</h2>
-        <p>Check out some of the websites we've built for our clients.</p>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <h2>Testimonials</h2>
-        <p>"Ingram Design Studios delivered a professional, user-friendly website that has boosted our business's visibility."</p>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <p>Get in touch with us to start your project today!</p>
     </section>
 
     <!-- Footer -->
