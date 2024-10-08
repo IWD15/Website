@@ -6,29 +6,123 @@
     <meta name="description" content="Professional web design services for tradesmen like plumbers, carpenters, and builders.">
     <title>Web Design for Tradesmen</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Google Font: Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Logo Container */
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        /* SVG Logo Styling */
+        .logo-svg {
+            width: 60px; /* Keep the same size */
+            height: 60px;
+            margin-right: 10px; /* Space between logo and text */
+        }
+
+        /* Logo Text Styling */
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            font-size: 22px;
+            color: #ffffff; /* White text for logo */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #0a0a23;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <header>
+        <!-- Logo with Correct "D" -->
+        <div class="logo-container">
+            <svg class="logo-svg" viewBox="0 0 100 100">
+                <!-- Outer circle -->
+                <circle cx="50" cy="50" r="48" fill="#0a0a23" stroke="#ffffff" stroke-width="4"/>
+
+                <!-- Letter "I" -->
+                <rect x="30" y="25" width="8" height="50" fill="#ffffff" />
+
+                <!-- Proper Letter "D" matching traditional design -->
+                <path d="M50 25 H60 A12 25 0 1 1 60 75 H50 Z" fill="#ffffff" />
+            </svg>
+            <div class="logo-text">Ingram Design Studios</div>
+        </div>
+
+        <!-- Navigation Menu -->
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
+    <section id="hero" class="hero">
         <h1>Professional Web Design for Tradesmen</h1>
         <p>Helping gas engineers, plumbers, carpenters, and builders establish a strong online presence.</p>
-        <a href="services.html" class="btn">View Our Services</a>
+        <a href="#services" class="btn">View Our Services</a>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>We specialize in designing modern, high-quality websites tailored to the needs of tradesmen.</p>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Services</h2>
+        <p>Custom web design, SEO optimization, website maintenance, and more.</p>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <h2>Our Portfolio</h2>
+        <p>Examples of websites we've built for tradesmen.</p>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <h2>Testimonials</h2>
+        <p>"They built a fantastic website that showcases my business!"</p>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Get in touch to start your project today.</p>
     </section>
 
     <footer>
         <p>&copy; 2024 Web Design for Tradesmen. All rights reserved.</p>
     </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>

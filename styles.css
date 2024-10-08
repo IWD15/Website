@@ -1,15 +1,21 @@
+/* Importing Fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Raleway:wght@700&display=swap');
+
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; /* Regular weight for body text */
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #0a0a23; /* Dark Background */
+    color: #e0e0e0; /* Light Gray Text */
+    scroll-behavior: smooth; /* Smooth scrolling */
 }
 
+/* Header and Navigation */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
+    background-color: #0d0d33; /* Darker background */
+    padding: 20px 0;
 }
 
 nav ul {
@@ -20,56 +26,155 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav ul li a {
-    color: #fff;
+    color: #e0e0e0;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
+nav ul li a:hover {
+    color: #ffffff; /* Hovering over links will change to white */
+}
+
+/* Hero Section */
 .hero {
     text-align: center;
-    padding: 100px 0;
-    background-color: #008cba;
-    color: #fff;
+    padding: 120px 0;
+    background-color: #0f0f3d; /* Darker blue */
+    color: #ffffff; /* Softer White */
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-family: 'Raleway', sans-serif; /* Raleway for Headings */
+    font-weight: 700;
+    font-size: 3.8rem;
     margin-bottom: 20px;
+    color: #ffffff; /* White for headings */
+    animation: fadeIn 1s ease-in; /* Fade-in effect on load */
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif; /* Montserrat for body text */
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #b3b3ff; /* Light Gray Text */
 }
 
 .hero .btn {
-    background-color: #fff;
-    color: #008cba;
-    padding: 10px 20px;
+    background-color: #ffffff; /* Soft White */
+    color: #0a0a23; /* Dark Text */
+    padding: 12px 25px;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .hero .btn:hover {
-    background-color: #005f75;
-    color: #fff;
+    background-color: #cccccc; /* Slightly darker gray on hover */
+    transform: scale(1.05); /* Slight button scaling on hover */
 }
 
+/* Sections */
 section {
-    padding: 50px;
+    padding: 80px;
     text-align: center;
+    background-color: #0a0a23;
 }
 
+.about,
+.services,
+.portfolio,
+.testimonials,
+.contact {
+    margin: 20px auto;
+    padding: 60px;
+    max-width: 1000px;
+    border-radius: 15px;
+    background-color: #0f0f3d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards ease-in-out;
+}
+
+h2 {
+    font-family: 'Raleway', sans-serif; /* Raleway for Headings */
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #ffffff; /* White headings */
+    margin-bottom: 20px;
+}
+
+p, ul {
+    font-family: 'Montserrat', sans-serif; /* Montserrat for body text */
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+/* Footer */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #0d0d33;
+    color: #e0e0e0;
     text-align: center;
-    padding: 20px 0;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
+    padding: 30px 0;
+}
+
+/* Links and Buttons */
+a {
+    color: #ffffff; /* White links */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #cccccc; /* Light gray hover effect */
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Smooth Scrolling Animation for Sections */
+section.about,
+section.services,
+section.portfolio,
+section.testimonials,
+section.contact {
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.about.visible,
+section.services.visible,
+section.portfolio.visible,
+section.testimonials.visible,
+section.contact.visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
 }
