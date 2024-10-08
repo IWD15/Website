@@ -3,83 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional web design services for tradesmen like plumbers, carpenters, and builders.">
-    <title>Web Design for Tradesmen</title>
+    <meta name="description" content="Ingram Design Studios - Professional web design services for various industries.">
+    <title>Ingram Design Studios</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Google Font: Montserrat -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Logo Container */
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-
-        /* SVG Logo Styling */
-        .logo-svg {
-            width: 60px; /* Keep the same size */
-            height: 60px;
-            margin-right: 10px; /* Space between logo and text */
-        }
-
-        /* Logo Text Styling */
-        .logo-text {
+        /* Global Styles */
+        body {
             font-family: 'Montserrat', sans-serif;
-            font-weight: bold;
-            font-size: 22px;
-            color: #ffffff; /* White text for logo */
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a23;
+            color: white;
         }
-
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 20px 40px;
             background-color: #0a0a23;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-
         nav ul {
             list-style: none;
             display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 0;
-            margin: 0;
+            gap: 20px;
         }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
         nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #61dafb; /* Highlight color on hover */
+        }
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-image: url('hero-image.jpg'); /* Add your hero image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .hero p {
+            margin: 20px 0;
+            font-size: 1.2rem;
+        }
+        .btn {
+            padding: 15px 30px;
+            background-color: #61dafb;
+            color: #0a0a23;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #ffffff;
+        }
+        /* Intro Section */
+        .intro {
+            padding: 60px 40px;
+            text-align: center;
+            background-color: #111133;
+        }
+        .intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .intro p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        /* About, Services, Portfolio, Testimonials */
+        .about, .services, .portfolio, .testimonials, .contact {
+            padding: 60px 40px;
+            text-align: center;
+        }
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.1rem;
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0a0a23;
+            color: #999;
         }
     </style>
 </head>
 <body>
+
+    <!-- Header & Navigation -->
     <header>
-        <!-- Logo with Correct "D" -->
         <div class="logo-container">
-            <svg class="logo-svg" viewBox="0 0 100 100">
-                <!-- Outer circle -->
+            <svg class="logo-svg" viewBox="0 0 100 100" width="60" height="60">
+                <!-- Logo content -->
                 <circle cx="50" cy="50" r="48" fill="#0a0a23" stroke="#ffffff" stroke-width="4"/>
-
-                <!-- Letter "I" -->
                 <rect x="30" y="25" width="8" height="50" fill="#ffffff" />
-
-                <!-- Proper Letter "D" matching traditional design -->
                 <path d="M50 25 H60 A12 25 0 1 1 60 75 H50 Z" fill="#ffffff" />
             </svg>
             <div class="logo-text">Ingram Design Studios</div>
         </div>
-
-        <!-- Navigation Menu -->
         <nav>
             <ul>
                 <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About Us</a></li>
+                <li><a href="#intro">About Us</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
@@ -88,41 +141,53 @@
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section id="hero" class="hero">
-        <h1>Professional Web Design for Tradesmen</h1>
-        <p>Helping gas engineers, plumbers, carpenters, and builders establish a strong online presence.</p>
-        <a href="#services" class="btn">View Our Services</a>
+        <h1>Ingram Design Studios</h1>
+        <p>Crafting modern, professional websites for businesses.</p>
+        <a href="#services" class="btn">Explore Our Services</a>
     </section>
 
+    <!-- Intro Section -->
+    <section id="intro" class="intro">
+        <h2>About Ingram Design Studios</h2>
+        <p>At Ingram Design Studios, we specialize in delivering high-quality, custom websites tailored to your business needs. Whether you're a tradesman, small business, or an entrepreneur, our goal is to provide modern and effective websites that enhance your online presence. Based in Ashford, Kent, we focus on creating user-friendly designs that help you stand out in the digital world.</p>
+    </section>
+
+    <!-- About Us Section -->
     <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>We specialize in designing modern, high-quality websites tailored to the needs of tradesmen.</p>
+        <h2>Our Mission</h2>
+        <p>Our mission is to create impactful, visually appealing websites that help our clients succeed in their industries.</p>
     </section>
 
+    <!-- Services Section -->
     <section id="services" class="services">
-        <h2>Services</h2>
-        <p>Custom web design, SEO optimization, website maintenance, and more.</p>
+        <h2>Our Services</h2>
+        <p>We offer custom web design, SEO optimization, website maintenance, and more.</p>
     </section>
 
+    <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <h2>Our Portfolio</h2>
-        <p>Examples of websites we've built for tradesmen.</p>
+        <p>Check out some of the websites we've built for our clients.</p>
     </section>
 
+    <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <h2>Testimonials</h2>
-        <p>"They built a fantastic website that showcases my business!"</p>
+        <p>"Ingram Design Studios delivered a professional, user-friendly website that has boosted our business's visibility."</p>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2>Contact Us</h2>
-        <p>Get in touch to start your project today.</p>
+        <p>Get in touch with us to start your project today!</p>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Web Design for Tradesmen. All rights reserved.</p>
+        <p>&copy; 2024 Ingram Design Studios. All rights reserved.</p>
     </footer>
 
-    <script src="scripts.js"></script>
 </body>
 </html>
