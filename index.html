@@ -44,6 +44,21 @@
     </div>
 </section>
 
+<!-- JavaScript for animations and page load -->
+<script>
+    // Ensure the page loads at the top
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    };
+
+    // Fade-in effect for the hero section on load
+    window.addEventListener('load', () => {
+        const hero = document.querySelector('.hero');
+        hero.style.opacity = '1';
+        hero.style.transform = 'translateY(0)';
+    });
+</script>
+
 <script>
     // Ensure the fade-in effect happens after a slight delay
     window.addEventListener('load', () => {
