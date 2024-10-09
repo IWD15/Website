@@ -6,398 +6,92 @@
     <meta name="description" content="Ingram Design Studios - Professional web design services for various industries.">
     <title>Ingram Design Studios</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        /* Global Styles */
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #0a0a23;
-            color: white;
-        }
-        a {
-            text-decoration: none;
-            color: #fff;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            background-color: #0a0a23;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-        nav ul li a {
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #61dafb;
-        }
-
-        /* Logo and Flexbox */
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .logo-svg {
-            width: 60px;
-            height: 60px;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 80vh;
-            padding: 30px 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background-color: #0a0a23;
-            color: #ffffff;
-        }
-        .hero h1 {
-            font-size: 3.5rem;
-            margin: 0;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-        .hero p {
-            margin: 15px 0;
-            font-size: 1.2rem;
-        }
-        .btn {
-            padding: 15px 30px;
-            background-color: #61dafb;
-            color: #0a0a23;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .btn:hover {
-            background-color: #ffffff;
-        }
-
-        /* Scroll Down Indicator */
-        .scroll-down {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            cursor: pointer;
-            animation: pulse 2s infinite;
-        }
-        .scroll-down svg {
-            width: 30px;
-            height: 50px;
-            stroke: #ffffff;
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-        }
-
-        /* Services Section */
-        .services-highlight {
-            padding: 60px 40px;
-            background-color: #f8f8f8;
-            color: #0a0a23;
-            text-align: center;
-        }
-        .services-highlight h2 {
-            font-size: 2.5rem;
-            color: #000000; /* Ensure contrast for light background */
-        }
-        .service-cards {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-        .service-cards .card {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 250px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        .service-cards .card:hover {
-            transform: translateY(-10px);
-        }
-        .service-cards img {
-            width: 80px;
-            margin-bottom: 15px;
-        }
-        .service-cards h3 {
-            font-size: 1.5rem;
-            color: #0a0a23;
-        }
-
-        /* Portfolio Section */
-        .portfolio-preview {
-            padding: 60px 40px;
-            background-color: #eeeeee;
-            color: #0a0a23;
-            text-align: center;
-        }
-        .portfolio-preview h2 {
-            font-size: 2.5rem;
-            color: #000000; /* Contrast for light background */
-        }
-        .portfolio-grid {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .portfolio-item {
-            position: relative;
-            width: 300px;
-            height: 200px;
-            background-color: #ccc;
-        }
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-        .portfolio-item .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s;
-            border-radius: 8px;
-        }
-        .portfolio-item:hover .overlay {
-            opacity: 1;
-        }
-        .portfolio-item h3 {
-            color: white;
-        }
-        .portfolio-item a {
-            color: #61dafb;
-            text-decoration: underline;
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            padding: 60px 40px;
-            background-color: #111133;
-            color: #ffffff;
-            text-align: center;
-        }
-        .testimonials h2 {
-            font-size: 2.5rem;
-            color: #ffffff;
-        }
-        .testimonial-slider {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .testimonial {
-            background-color: #333;
-            padding: 20px;
-            border-radius: 8px;
-            width: 300px;
-        }
-        .testimonial p {
-            font-style: italic;
-            font-size: 1rem;
-        }
-        .testimonial span {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        /* Call to Action Section */
-        .cta-banner {
-            padding: 60px 40px;
-            background-color: #61dafb;
-            color: #0a0a23;
-            text-align: center;
-        }
-        .cta-banner h2 {
-            font-size: 2.5rem;
-            color: #0a0a23;
-        }
-        .cta-banner .btn {
-            background-color: #0a0a23;
-            color: #61dafb;
-            padding: 15px 30px;
-        }
-
-        /* Clients Section */
-        .clients {
-            padding: 60px 40px;
-            background-color: #e6e6e6;
-            color: #0a0a23;
-            text-align: center;
-        }
-        .clients h2 {
-            font-size: 2.5rem;
-            color: #000000;
-        }
-        .client-logos {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-        .client-logos img {
-            width: 100px;
-            filter: grayscale(100%);
-            transition: filter 0.3s;
-        }
-        .client-logos img:hover {
-            filter: grayscale(0);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 60px 40px;
-            background-color: #0a0a23;
-            color: white;
-            text-align: center;
-        }
-        .contact h2 {
-            font-size: 2.5rem;
-            color: #ffffff;
-        }
-        .contact form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-        .contact input,
-        .contact textarea {
-            width: 300px;
-            padding: 10px;
-            border-radius: 5px;
-            border: none;
-            background-color: #fff;
-            color: #0a0a23;
-        }
-        .contact textarea {
-            height: 120px;
-            resize: none;
-        }
-        .contact button {
-            padding: 15px 30px;
-            background-color: #61dafb;
-            color: #0a0a23;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-    </style>
 </head>
 <body>
 
-    <!-- Header & Navigation -->
-    <header>
-        <div class="logo-container">
-            <svg class="logo-svg" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="48" fill="#0a0a23" stroke="#ffffff" stroke-width="4"/>
-                <rect x="30" y="25" width="8" height="50" fill="#ffffff" />
-                <path d="M50 25 H60 A12 25 0 1 1 60 75 H50 Z" fill="#ffffff" />
-            </svg>
-            <div class="logo-text">Ingram Design Studios</div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#intro">About Us</a></li>
-                <li><a href="#services-highlight">Services</a></li>
-                <li><a href="#portfolio-preview">Portfolio</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+<!-- Header & Navigation -->
+<header>
+    <div class="logo-container">
+        <svg class="logo-svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="48" fill="#0a0a23" stroke="#ffffff" stroke-width="4"/>
+            <rect x="30" y="25" width="8" height="50" fill="#ffffff" />
+            <path d="M50 25 H60 A12 25 0 1 1 60 75 H50 Z" fill="#ffffff" />
+        </svg>
+        <div class="logo-text">Ingram Design Studios</div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#intro">About Us</a></li>
+            <li><a href="#services-highlight">Services</a></li>
+            <li><a href="#portfolio-preview">Portfolio</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <h1>Ingram Design Studios</h1>
-        <p>Crafting modern, professional websites for businesses.</p>
-        <a href="#services-highlight" class="btn">Explore Our Services</a>
-        <!-- Scroll Down Indicator -->
-        <div class="scroll-down" onclick="document.getElementById('services-highlight').scrollIntoView({ behavior: 'smooth' })">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M12 19V5m0 14-5-5m5 5 5-5"/>
-            </svg>
-        </div>
-    </section>
+<!-- Hero Section with CTA -->
+<section id="hero" class="hero">
+    <h1>Ingram Design Studios</h1>
+    <p>Crafting modern, professional websites for businesses.</p>
+    <a href="#services-highlight" class="btn">Explore Our Services</a>
+    <!-- Scroll Down Indicator -->
+    <div class="scroll-down" onclick="document.getElementById('services-highlight').scrollIntoView({ behavior: 'smooth' })">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 19V5m0 14-5-5m5 5 5-5"/>
+        </svg>
+    </div>
+</section>
 
-    <!-- Services Section -->
-    <section id="services-highlight" class="services-highlight">
-        <h2>Our Specialities</h2>
-        <div class="service-cards">
-            <div class="card">
-                <img src="design-icon.png" alt="Web Design">
-                <h3>Web Design</h3>
-                <p>We create custom, mobile-friendly websites tailored to your business needs.</p>
-            </div>
-            <div class="card">
-                <img src="seo-icon.png" alt="SEO Services">
-                <h3>SEO Optimisation</h3>
-                <p>Helping you rank higher on search engines with professional SEO strategies.</p>
-            </div>
-            <div class="card">
-                <img src="maintenance-icon.png" alt="Maintenance">
-                <h3>Website Maintenance</h3>
-                <p>Keep your website running smoothly with our ongoing maintenance services.</p>
-            </div>
+   <!-- Services Section -->
+<section id="services-highlight" class="services-highlight">
+    <h2>Our Specialities</h2>
+    <div class="service-cards">
+        <div class="card">
+            <img src="design-icon.png" alt="Web Design">
+            <h3>Web Design</h3>
+            <p>We create custom, mobile-friendly websites tailored to your business needs.</p>
         </div>
-    </section>
+        <div class="card">
+            <img src="seo-icon.png" alt="SEO Services">
+            <h3>SEO Optimisation</h3>
+            <p>Helping you rank higher on search engines with professional SEO strategies.</p>
+        </div>
+        <div class="card">
+            <img src="maintenance-icon.png" alt="Maintenance">
+            <h3>Website Maintenance</h3>
+            <p>Keep your website running smoothly with our ongoing maintenance services.</p>
+        </div>
+    </div>
+</section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio-preview" class="portfolio-preview">
-        <h2>Recent Projects</h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="project1-thumbnail.jpg" alt="Project 1">
-                <div class="overlay">
-                    <h3>Plumbing Website</h3>
-                    <a href="#">View Project</a>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="project2-thumbnail.jpg" alt="Project 2">
-                <div class="overlay">
-                    <h3>Carpentry Solutions</h3>
-                    <a href="#">View Project</a>
-                </div>
+<!-- Portfolio Section -->
+<section id="portfolio-preview" class="portfolio-preview">
+    <h2>Recent Projects</h2>
+    <div class="portfolio-grid">
+        <div class="portfolio-item">
+            <img src="project1-thumbnail.jpg" alt="Project 1">
+            <div class="overlay">
+                <h3>Plumbing Website</h3>
+                <a href="#">View Project</a>
             </div>
         </div>
+        <div class="portfolio-item">
+            <img src="project2-thumbnail.jpg" alt="Project 2">
+            <div class="overlay">
+                <h3>Carpentry Solutions</h3>
+                <a href="#">View Project</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Ready to Start Your Project Section -->
+    <section class="cta-section">
+        <h2>Ready to Start Your Project?</h2>
+        <a href="#contact" class="btn cta-btn">Get in Touch</a>
     </section>
 
     <!-- Testimonials Section -->
@@ -413,12 +107,6 @@
                 <span>- Sarah Cooper, Carpentry Solutions</span>
             </div>
         </div>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section class="cta-banner">
-        <h2>Ready to Start Your Project?</h2>
-        <a href="#contact" class="btn cta-btn">Get in Touch</a>
     </section>
 
     <!-- Clients Section -->
