@@ -501,4 +501,74 @@ footer {
 
 
 
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    /* Adjust the header and navigation */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .logo-container {
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Hide regular navigation on mobile */
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        display: none; /* Hide by default */
+    }
+
+    nav ul li {
+        text-align: center;
+    }
+
+    /* Show the mobile menu when the hamburger is clicked */
+    .nav-active {
+        display: flex !important;
+    }
+
+    /* Hamburger Menu Icon */
+    .hamburger {
+        display: block; /* Show the hamburger on mobile */
+        background-color: transparent;
+        border: none;
+        font-size: 1.5rem;
+        color: #e0e0e0;
+        cursor: pointer;
+        margin-left: auto;
+    }
+
+    /* Reduce font sizes and paddings for smaller screens */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    section {
+        padding: 30px 10px;
+    }
+
+    /* Ensure full-width sections */
+    .services-highlight, .about-us, .testimonials, .clients, .portfolio-preview {
+        padding: 30px 10px;
+    }
+
+    /* Responsive grid for service and portfolio items */
+    .service-cards, .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Default styling for the hamburger on larger screens */
+.hamburger {
+    display: none; /* Hide the hamburger icon on desktop */
+}
 
