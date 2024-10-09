@@ -77,12 +77,13 @@ nav ul li a:hover {
 /* Scroll Down Indicator */
 .scroll-down {
     position: absolute;
-    bottom: 80px; /* Adjust this value to raise the arrow higher */
+    bottom: 50px; /* Move the arrow higher by increasing this value */
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
     animation: bounce 2s infinite;
 }
+
 
 
 /* Fade-In Animation */
