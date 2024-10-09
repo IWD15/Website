@@ -310,3 +310,25 @@ footer {
     margin-top: 10px;
 }
 
+/* About Us Section */
+.about-us {
+    padding: 60px 20px;
+    background-color: #0f0f3d; /* Matching the background color for consistency */
+    color: #e0e0e0;
+    text-align: center;
+}
+
+.about-us h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.about-us p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #b3b3ff;
+}
+
