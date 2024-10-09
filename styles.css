@@ -242,16 +242,16 @@ footer {
 }
 /* Services Section */
 .services-highlight {
-    padding: 60px 20px; /* Reduced padding for consistent spacing */
-    background-color: #0f0f3d; /* Matching the hero background for consistency */
-    color: #e0e0e0;
+    padding: 60px 20px;
+    background-color: #f5f7fade; /* Softer off-white */
+    color: #333333;
     text-align: center;
 }
 
 .services-highlight h2 {
     font-size: 2.5rem;
     margin-bottom: 40px;
-    color: #ffffff; /* White text for contrast */
+    color: #0a0a23; /* Darker color for contrast */
 }
 
 /* Service Cards Styling */
@@ -265,12 +265,12 @@ footer {
 }
 
 .card {
-    background-color: #1a1a3d;
+    background-color: #e0e0e0; /* Light gray for card background */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Softer shadow */
     text-align: center;
-    color: #ffffff;
+    color: #333333;
     transition: transform 0.3s;
 }
 
@@ -278,21 +278,19 @@ footer {
     transform: translateY(-10px);
 }
 
-.card img {
-    width: 60px;
-    margin-bottom: 20px;
-}
-
 .card h3 {
     font-size: 1.5rem;
+    color: #0a0a23; /* Darker heading color for emphasis */
     margin-bottom: 10px;
 }
 
 .card p {
     font-size: 1rem;
     line-height: 1.6;
-    color: #b3b3b3;
+    color: #666666; /* Medium gray for paragraph text */
 }
+
+
 
 /* Portfolio Section */
 .portfolio-preview {
@@ -417,29 +415,43 @@ footer {
 /* Clients Section */
 .clients {
     padding: 60px 20px;
-    background-color: #0a0a23;
-    color: #e0e0e0;
+    background-color: #f5f7fa; /* Softer off-white */
+    color: #333333;
     text-align: center;
 }
 
+.clients h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #0a0a23; /* Darker color for contrast */
+}
+
+/* Client Logos Styling */
 .client-logos {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly; /* Spread logos evenly */
     align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 20px;
+    max-width: 1000px; /* Increase max-width for wider spread */
+    margin: 0 auto;
+    flex-wrap: nowrap; /* Prevent wrapping to keep logos on one line */
 }
 
 .client-logos img {
+    background-color: #e0e0e0; /* Light gray for card background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    transition: transform 0.3s, background-color 0.3s;
     width: 100px;
     height: auto;
-    transition: transform 0.3s ease-in-out;
 }
 
 .client-logos img:hover {
     transform: scale(1.1);
+    background-color: #d8d8d8; /* Slightly darker gray on hover */
 }
+
+
 
 /* Contact Section */
 .contact {
@@ -464,8 +476,10 @@ footer {
 }
 
 .contact input, 
-.contact textarea {
-    width: 100%;
+.contact textarea, 
+.contact button {
+    width: 100%; /* Ensure all elements take up the full form width */
+    box-sizing: border-box; /* Include padding in width calculation */
     padding: 12px;
     border-radius: 5px;
     border: 1px solid #cccccc;
@@ -476,8 +490,6 @@ footer {
 .contact button {
     background-color: #ffffff;
     color: #0a0a23;
-    padding: 12px;
-    border-radius: 5px;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -486,5 +498,7 @@ footer {
 .contact button:hover {
     background-color: #cccccc;
 }
+
+
 
 

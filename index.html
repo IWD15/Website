@@ -36,38 +36,12 @@
     <h1>Ingram Design Studios</h1>
     <p>Crafting modern, professional websites for businesses.</p>
     <a href="#services-highlight" class="btn">Explore Our Services</a>
-    <!-- Scroll Down Indicator -->
     <div class="scroll-down" onclick="document.getElementById('intro').scrollIntoView({ behavior: 'smooth' })">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M12 19V5m0 14-5-5m5 5 5-5"/>
         </svg>
     </div>
 </section>
-
-<!-- JavaScript for animations and page load -->
-<script>
-    // Ensure the page loads at the top
-    window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
-    };
-
-    // Fade-in effect for the hero section on load
-    window.addEventListener('load', () => {
-        const hero = document.querySelector('.hero');
-        hero.style.opacity = '1';
-        hero.style.transform = 'translateY(0)';
-    });
-</script>
-
-<script>
-    // Ensure the fade-in effect happens after a slight delay
-    window.addEventListener('load', () => {
-        const hero = document.querySelector('.hero');
-        hero.style.opacity = '1';
-        hero.style.transform = 'translateY(0)';
-    });
-</script>
-
 
 <!-- About Us Section -->
 <section id="intro" class="about-us">
@@ -79,8 +53,7 @@
     </p>
 </section>
 
-
-   <!-- Services Section -->
+<!-- Services Section -->
 <section id="services-highlight" class="services-highlight">
     <h2>Our Specialities</h2>
     <div class="service-cards">
@@ -123,90 +96,76 @@
     </div>
 </section>
 
+<!-- Ready to Start Your Project Section -->
+<section class="cta-section">
+    <h2>Ready to Start Your Project?</h2>
+    <a href="#contact" class="btn cta-btn">Get in Touch</a>
+</section>
 
-    <!-- Ready to Start Your Project Section -->
-    <section class="cta-section">
-        <h2>Ready to Start Your Project?</h2>
-        <a href="#contact" class="btn cta-btn">Get in Touch</a>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <h2>What Our Clients Say</h2>
-        <div class="testimonial-slider">
-            <div class="testimonial">
-                <p>"Ingram Design Studios transformed our online presence. We highly recommend their services!"</p>
-                <span>- John Smith, Ashford Plumbing</span>
-            </div>
-            <div class="testimonial">
-                <p>"Thanks to their web design, our business has seen a 30% increase in traffic!"</p>
-                <span>- Sarah Cooper, Carpentry Solutions</span>
-            </div>
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-slider">
+        <div class="testimonial">
+            <p>"Ingram Design Studios transformed our online presence. We highly recommend their services!"</p>
+            <span>- John Smith, Ashford Plumbing</span>
         </div>
-    </section>
-
-    <!-- Clients Section -->
-    <section id="clients" class="clients">
-        <h2>Trusted By</h2>
-        <div class="client-logos">
-            <img src="client1-logo.png" alt="Client 1">
-            <img src="client2-logo.png" alt="Client 2">
-            <img src="client3-logo.png" alt="Client 3">
+        <div class="testimonial">
+            <p>"Thanks to their web design, our business has seen a 30% increase in traffic!"</p>
+            <span>- Sarah Cooper, Carpentry Solutions</span>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <form action="submit_form.php" method="post">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+<!-- Clients Section -->
+<section id="clients" class="clients">
+    <h2>Trusted By</h2>
+    <div class="client-logos">
+        <img src="client1-logo.png" alt="Client 1">
+        <img src="client2-logo.png" alt="Client 2">
+        <img src="client3-logo.png" alt="Client 3">
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Ingram Design Studios. All rights reserved.</p>
-    </footer>
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form action="submit_form.php" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
 
-    <script>
-        // Fade-in effect when sections scroll into view
-        const sections = document.querySelectorAll('section');
-    
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-    
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Ingram Design Studios. All rights reserved.</p>
+</footer>
 
-    <!-- Other content -->
+<!-- JavaScript for fade-in effect -->
+<script>
+    window.addEventListener('load', () => {
+        document.querySelector('.hero').style.opacity = '1';
+    });
+</script>
 
 <script>
-    // Ensure the page loads at the top
-    window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
-    };
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
 
-    // Fade-in effect for the hero section on load
-    window.addEventListener('load', () => {
-        const hero = document.querySelector('.hero');
-        hero.style.opacity = '1';
-        hero.style.transform = 'translateY(0)';
+    sections.forEach(section => {
+        observer.observe(section);
     });
 </script>
 
 </body>
 </html>
-
-    
