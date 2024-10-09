@@ -444,6 +444,16 @@ footer {
     transition: transform 0.3s, background-color 0.3s;
     width: 100px;
     height: auto;
+    
+}
+
+@media (max-width: 768px) {
+    /* Existing styles */
+
+    /* Add bottom margin to client logos for mobile */
+    .client-logos img {
+        margin-bottom: 25px; /* Adjust the value as needed for the desired spacing */
+    }
 }
 
 .client-logos img:hover {
