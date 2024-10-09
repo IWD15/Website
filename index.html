@@ -37,12 +37,22 @@
     <p>Crafting modern, professional websites for businesses.</p>
     <a href="#services-highlight" class="btn">Explore Our Services</a>
     <!-- Scroll Down Indicator -->
-    <div class="scroll-down" onclick="document.getElementById('services-highlight').scrollIntoView({ behavior: 'smooth' })">
+    <div class="scroll-down" onclick="document.getElementById('intro').scrollIntoView({ behavior: 'smooth' })">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M12 19V5m0 14-5-5m5 5 5-5"/>
         </svg>
     </div>
 </section>
+
+<script>
+    // Ensure the fade-in effect happens after a slight delay
+    window.addEventListener('load', () => {
+        const hero = document.querySelector('.hero');
+        hero.style.opacity = '1';
+        hero.style.transform = 'translateY(0)';
+    });
+</script>
+
 
 <!-- About Us Section -->
 <section id="intro" class="about-us">
@@ -145,6 +155,51 @@
     <footer>
         <p>&copy; 2024 Ingram Design Studios. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Fade-in effect when sections scroll into view
+        const sections = document.querySelectorAll('section');
+    
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+    
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+    <!-- Other content -->
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Ingram Design Studios. All rights reserved.</p>
+</footer>
+
+<script>
+    // Ensure the page loads at the top
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    };
+
+    // Fade-in effect for the hero section on load
+    window.addEventListener('load', () => {
+        const hero = document.querySelector('.hero');
+        hero.style.opacity = '1';
+        hero.style.transform = 'translateY(0)';
+    });
+</script>
+
+</body>
+</html>
+
+    
 
 </body>
 </html>
